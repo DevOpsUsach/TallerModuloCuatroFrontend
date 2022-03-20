@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  vuejs:
+    build:
+      context: .
+      dockerfile: compose/local/Dockerfile
+    image: taller-cuatro-local
+    container_name: taller-cuatro-local
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - npm_config_unsafe_perm=true
