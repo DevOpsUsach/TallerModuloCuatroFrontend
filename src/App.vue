@@ -93,16 +93,9 @@ export default {
         sueldo: this.retiro.sueldo,
       };
       this.axios
-        .get("https://jsonplaceholder.typicode.com/posts/1", { params })
+        .get("http://localhost:8080/rest/msdxc/dxc", { params })
         .then((response) => {
-          let _response = {
-            ahorro: 100000,
-            sueldo: 344440,
-            dxc: 2,
-            saldo: 3355,
-            impuesto: 10,
-          };
-          this.retiro = _response;
+          this.retiro = response;
         });
     },
   },
