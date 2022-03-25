@@ -10,7 +10,6 @@
             id="sueldo"
             aria-describedby="sueldoHelp"
             min="0"
-            value="0"
             v-model="retiro.sueldo"
           />
           <div id="sueldoHelp" class="form-text">
@@ -24,7 +23,6 @@
             class="form-control"
             id="ahorro"
             min="0"
-            value="0"
             v-model="retiro.ahorro"
           />
         </div>
