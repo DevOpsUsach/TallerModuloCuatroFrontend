@@ -3,6 +3,16 @@
     <div class="col-md-6">
       <form>
         <div class="mb-3">
+          <label for="ahorro" class="form-label">Ahorro</label>
+          <input
+            type="number"
+            class="form-control"
+            id="ahorro"
+            min="0"
+            v-model="retiro.ahorro"
+          />
+        </div>
+        <div class="mb-3">
           <label for="sueldo" class="form-label">Sueldo</label>
           <input
             type="number"
@@ -15,16 +25,6 @@
           <div id="sueldoHelp" class="form-text">
             Ingrese su sueldo, debe ser un valor positivo.
           </div>
-        </div>
-        <div class="mb-3">
-          <label for="ahorro" class="form-label">Ahorro</label>
-          <input
-            type="number"
-            class="form-control"
-            id="ahorro"
-            min="0"
-            v-model="retiro.ahorro"
-          />
         </div>
         <a
           @click="getRetiro"
@@ -50,15 +50,15 @@
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Impuesto</td>
-              <td class="text-end">{{ retiro.impuesto }}%</td>
-            </tr>
-            <tr>
-              <td scope="row" style="width: 60%">Sueldo</td>
-              <td class="text-end">${{ retiro.sueldo }}</td>
+              <td class="text-end">{{ retiro.impuesto }}</td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Ahorro</td>
               <td class="text-end">${{ retiro.ahorro }}</td>
+            </tr>
+            <tr>
+              <td scope="row" style="width: 60%">Sueldo</td>
+              <td class="text-end">${{ retiro.sueldo }}</td>
             </tr>
           </tbody>
         </table>
@@ -93,8 +93,10 @@ export default {
       this.axios
         .get("http://localhost:8080/rest/msdxc/dxc", { params })
         .then((response) => {
-          this.retiro = response;
-        });
+          console.log(response.data);
+          this.retiro = response.data;
+        })
+        .catch((e) => console.log(e));
     },
   },
 };
