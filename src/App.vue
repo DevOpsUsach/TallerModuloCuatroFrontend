@@ -91,7 +91,7 @@
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Valor</td>
-              <td class="text-end" id="fila-resultado-uf-valo">
+              <td class="text-end" id="fila-resultado-uf-valor">
                 ${{ uf.valor }}
               </td>
             </tr>
