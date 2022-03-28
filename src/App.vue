@@ -91,7 +91,7 @@ export default {
         sueldo: this.retiro.sueldo,
       };
       this.axios
-        .get("http://127.0.0.1:8080/rest/msdxc/dxc", { params })
+        .get("http://127.0.0.1:8090/rest/msdxc/dxc", { params })
         .then((response) => {
           console.log(response.data);
           this.retiro = response.data;
