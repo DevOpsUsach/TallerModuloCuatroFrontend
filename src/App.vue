@@ -73,10 +73,38 @@
       </div>
     </div>
   </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-6 container d-flex align-items-center">
+      <a @click="getUF" class="btn btn-primary" v-on:submit.prevent="onSubmit">
+        Obtener valor UF
+      </a>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 border rounded-3">
+        <h2>Valor UF</h2>
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td style="width: 60%">Fecha</td>
+              <td class="text-end" id="fila-resultado-dxc">{{ uf.fecha }}</td>
+            </tr>
+            <tr>
+              <td scope="row" style="width: 60%">Valor</td>
+              <td class="text-end" id="fila-resultado-saldo">
+                ${{ uf.valor }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 //http://localhost:8080/rest/msdxc/dxc?sueldo=10000000&ahorro=250000000
+import moment from "moment";
 
 export default {
   name: "App",
@@ -89,6 +117,7 @@ export default {
         saldo: 0,
         impuesto: 0,
       },
+      uf: { fecha: "-", valor: 0 },
     };
   },
   mounted() {},
@@ -103,6 +132,17 @@ export default {
         .then((response) => {
           console.log(response.data);
           this.retiro = response.data;
+        })
+        .catch((e) => console.log(e));
+    },
+    getUF() {
+      this.axios
+        .get("https://mindicador.cl/api/")
+        .then((response) => {
+          console.log(response.data.uf);
+          let _uf = response.data.uf;
+          _uf.fecha = moment(String(_uf.fecha)).format("DD/MM/YYYY");
+          this.uf = _uf;
         })
         .catch((e) => console.log(e));
     },
