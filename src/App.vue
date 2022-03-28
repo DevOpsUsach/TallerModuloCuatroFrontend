@@ -87,7 +87,9 @@
           <tbody>
             <tr>
               <td style="width: 60%">Fecha</td>
-              <td class="text-end" id="fila-resultado-uf-fecha">{{ uf.fecha }}</td>
+              <td class="text-end" id="fila-resultado-uf-fecha">
+                {{ uf.fecha }}
+              </td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Valor</td>
