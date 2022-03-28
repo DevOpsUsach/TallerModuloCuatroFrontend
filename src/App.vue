@@ -42,23 +42,31 @@
           <tbody>
             <tr>
               <td style="width: 60%">DXC</td>
-              <td class="text-end">{{ retiro.dxc }}</td>
+              <td class="text-end" id="fila-resultado-dxc">{{ retiro.dxc }}</td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Saldo</td>
-              <td class="text-end">${{ retiro.saldo }}</td>
+              <td class="text-end" id="fila-resultado-saldo">
+                ${{ retiro.saldo }}
+              </td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Impuesto</td>
-              <td class="text-end">{{ retiro.impuesto }}</td>
+              <td class="text-end" id="fila-resultado-impuesto">
+                {{ retiro.impuesto }}
+              </td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Ahorro</td>
-              <td class="text-end">${{ retiro.ahorro }}</td>
+              <td class="text-end" id="fila-resultado-ahorro">
+                ${{ retiro.ahorro }}
+              </td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Sueldo</td>
-              <td class="text-end">${{ retiro.sueldo }}</td>
+              <td class="text-end" id="fila-resultado-sueldo">
+                ${{ retiro.sueldo }}
+              </td>
             </tr>
           </tbody>
         </table>
