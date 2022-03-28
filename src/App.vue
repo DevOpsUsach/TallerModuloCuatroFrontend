@@ -87,11 +87,11 @@
           <tbody>
             <tr>
               <td style="width: 60%">Fecha</td>
-              <td class="text-end" id="fila-resultado-dxc">{{ uf.fecha }}</td>
+              <td class="text-end" id="fila-resultado-uf-fecha">{{ uf.fecha }}</td>
             </tr>
             <tr>
               <td scope="row" style="width: 60%">Valor</td>
-              <td class="text-end" id="fila-resultado-saldo">
+              <td class="text-end" id="fila-resultado-uf-valor">
                 ${{ uf.valor }}
               </td>
             </tr>
