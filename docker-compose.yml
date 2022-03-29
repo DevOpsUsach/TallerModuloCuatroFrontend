@@ -8,7 +8,7 @@ services:
     image: taller-cuatro-local
     container_name: taller-cuatro-local
     ports:
-      - "8080:8080"
+      - "8000:8000"
     volumes:
       - ./:/app
       - /app/node_modules
